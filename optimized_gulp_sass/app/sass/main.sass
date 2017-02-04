@@ -1,0 +1,30 @@
+%item-base
+  display: inline
+  box-sizing: border-box
+$mainColor: green
+.item1
+  font: 10px
+  @extend %item-base
+
+.item2
+  color: $mainColor
+  @extend %item-base
+
+$class:  link
+
+.#{$class}
+  color: 20 + px
+
+$width: 1000
+
+@for $i from 1 through 10
+  .md-#{$i}
+    width: $width/$i + px
+    @if $width/$i > 500
+      color: #green 
+
+@mixin font($size)
+  font: $size + px
+
+.item 
+  @include font(20)
